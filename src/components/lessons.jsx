@@ -5,37 +5,42 @@ import Search from "./search"
 
 function Lessons() {
   const data = getData()
-  const [need, setNeed] = useState(false)
+  const [need, setNeed] = useState(false) // false = поиск скрыт, true = показан
 
-  return <>
-    <button onClick={() => {
-      if (need) {
-        setNeed(false)
-      } else {
-        setNeed(true)
-      }
-    }} className={
-      need ? "Click-button-home" : "Clicked-button-home"
-    }>Пойск</button>
-    {
-    need && <div className="body-content">
-      <h1 className="home-h1">Пойск урока</h1>
-      <Search/>
-    </div>
-    }
-    
-    <div className="alls">
-      {data.map((l) => (
-        <div className="one-line" key={l.id}>
-          <h3 className="title">{l.name}</h3>
-          <details className="ofer">
-            <summary>Подробнее</summary>
-            <Lesson info={l} />
-          </details>
+  return (
+    <div className="lessons-container">
+      {/* Кнопка поиска */}
+      <div className="search-toggle-wrap">
+        <button 
+          onClick={() => setNeed(!need)} 
+          className={need ? "Clicked-button-home" : "Click-button-home"}
+        >
+          {need ? "Скрыть поиск" : "Поиск"}
+        </button>
+      </div>
+
+      {/* Блок поиска (появляется при need === true) */}
+      {need && (
+        <div className="search-block">
+          <h2 className="home-h1">Поиск урока</h2>
+          <Search />
         </div>
-      ))}
+      )}
+
+      {/* Список всех уроков */}
+      <div className="alls">
+        {data.map((l) => (
+          <div className="one-line" key={l.id}>
+            <h3 className="title">{l.name}</h3>
+            <details className="ofer">
+              <summary>Подробнее</summary>
+              <Lesson info={l} />
+            </details>
+          </div>
+        ))}
+      </div>
     </div>
-  </>
+  )
 }
 
 export default Lessons
