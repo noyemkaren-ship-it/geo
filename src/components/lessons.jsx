@@ -14,7 +14,9 @@ function Lessons() {
       } else {
         setNeed(true)
       }
-    }}>Пойск</button>
+    }} styleName={
+      need ? "Click-button-home" : "Clicked-button-home"
+    }>Пойск</button>
     {
     need && <div className="body-content">
       <h1 className="home-h1">Пойск урока</h1>
