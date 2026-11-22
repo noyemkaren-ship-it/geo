@@ -391,3 +391,19 @@ body {
     font-size: 24px;
   }
 }
+/* Текст объяснения под формулой */
+.f-explanation {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #4b5563;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.f-explanation b {
+  color: #1d4ed8; /* Выделяем переменные синим */
+}
+
+.f-content {
+  margin-top: 12px;
+}

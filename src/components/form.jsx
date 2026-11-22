@@ -10,10 +10,19 @@ function Form() {
                     <h1>{f.title}</h1>
                     <details className="form-details">
                         <summary className="detail-sum-f">узнать</summary>
-                        <p 
-                            className="f-detail" 
-                            dangerouslySetInnerHTML={{ __html: f.formula }} 
-                        />
+                        
+                        <div className="f-content">
+                            <p 
+                                className="f-detail" 
+                                dangerouslySetInnerHTML={{ __html: f.formula }} 
+                            />
+                            {f.explanation && (
+                                <p 
+                                    className="f-explanation" 
+                                    dangerouslySetInnerHTML={{ __html: f.explanation }} 
+                                />
+                            )}
+                        </div>
                     </details>
                 </div>
             ))}
