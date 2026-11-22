@@ -1,4 +1,4 @@
-import Search from "./search"
+
 
 function Home() {
   return (
@@ -10,7 +10,6 @@ function Home() {
       </p>
       <img className="home-photo" src="home-photo.jpg" alt="Не удалось загрузить" />
       <h1 className="home-h1">Найти урок</h1>
-      <Search/>
     </div>
   )
 }
