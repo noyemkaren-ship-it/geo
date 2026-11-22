@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Home from './components/Home'
-import Lessons from './components/Lessons'
+import Home from './components/home'
+import Lessons from './components/lessons'
 import './App.css'
 
 function App() {
