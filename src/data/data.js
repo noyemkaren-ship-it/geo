@@ -76,6 +76,48 @@ function getHtml(id) {
       Тоесть на против соотвественно равных сторон лежат соотвественно равные углы.
     </p>
     `;
+  } else if (id == 4) {
+    return `
+    <h1>Второй признак равенства треугольников</h1>
+
+    <h2 class="ytv-title">Утверждение</h2>
+    <p class="ytv">
+      <span class="ytv-text">
+        Если сторона и прилежащие к ней углы одного треугольника равны 
+        соответственно стороне и прилежащим к ней углам другого треугольника, 
+        то такие треугольники равны.
+      </span>
+    </p>
+
+    <h2 class="doc-title">Доказательство</h2>
+    <div class="doc">
+      <p>
+        Пусть △ABC и △A<sub>1</sub>B<sub>1</sub>C<sub>1</sub> — два треугольника, 
+        у которых AB = A<sub>1</sub>B<sub>1</sub>, ∠A = ∠A<sub>1</sub> 
+        и ∠B = ∠B<sub>1</sub> (рис. 47). Докажем, что треугольники равны.
+      </p>
+      <p>
+        Пусть A<sub>1</sub>B<sub>2</sub>C<sub>2</sub> — треугольник, равный треугольнику ABC, 
+        с вершиной B<sub>2</sub> на луче A<sub>1</sub>B<sub>1</sub> и вершиной C<sub>2</sub> 
+        в той же полуплоскости относительно прямой A<sub>1</sub>B<sub>1</sub>, 
+        где лежит вершина C<sub>1</sub>.
+      </p>
+      <p>
+        Так как A<sub>1</sub>B<sub>2</sub> = A<sub>1</sub>B<sub>1</sub>, то вершина B<sub>2</sub> 
+        совпадает с вершиной B<sub>1</sub>. Так как ∠B<sub>1</sub>A<sub>1</sub>C<sub>2</sub> = 
+        ∠B<sub>1</sub>A<sub>1</sub>C<sub>1</sub> и ∠A<sub>1</sub>B<sub>1</sub>C<sub>2</sub> = 
+        ∠A<sub>1</sub>B<sub>1</sub>C<sub>1</sub>, то луч A<sub>1</sub>C<sub>2</sub> совпадает 
+        с лучом A<sub>1</sub>C<sub>1</sub>, а луч B<sub>1</sub>C<sub>2</sub> совпадает 
+        с лучом B<sub>1</sub>C<sub>1</sub>. Отсюда следует, что вершина C<sub>2</sub> 
+        совпадает с вершиной C<sub>1</sub>.
+      </p>
+      <p>
+        Итак, треугольник A<sub>1</sub>B<sub>1</sub>C<sub>1</sub> совпадает с треугольником 
+        A<sub>1</sub>B<sub>2</sub>C<sub>2</sub>, а значит, равен треугольнику ABC. 
+      </p>
+      <p class="doc-end">Теорема доказана.</p>
+    </div>
+    `;
   }
 
   return `Не найдена к сожелению`;
@@ -100,6 +142,12 @@ export function getData() {
       name: "Некие определения у треугольников",
       text: getHtml(3),
       photo: "d.png"
+    },
+    {
+      id: 4,
+      name: "Второй признак равенства треугольников",
+      text: getHtml(4),
+      photo: "b.png"
     }
-  ]
+  ];
 }
