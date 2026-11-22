@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Home from './components/home'
 import Lessons from './components/lessons'
-import './App.css'
 import Form from './components/form'
+import './App.css'
 
 function App() {
   const [page, setPage] = useState('index')
@@ -32,16 +32,24 @@ function App() {
               Все уроки
             </button>
           )}
-          {
-            page !== 'formul' ? <button className='Click-button-f' onClick={setPage('formul')}>Формулы</button> : <button className='Clicked-button-f'>Формулы</button>
-          }
+
+          {/* Здесь была ошибка: onClick={setPage('formul')} */}
+          {page !== 'formul' ? (
+            <button className="Click-button-f" onClick={() => setPage('formul')}>
+              Формулы
+            </button>
+          ) : (
+            <button className="Clicked-button-f" disabled>
+              Формулы
+            </button>
+          )}
         </div>
       </div>
 
       <div className="body-content">
         {page === 'index' && <Home />}
         {page === 'alls' && <Lessons />}
-        {page === 'formul' && <Form/>}
+        {page === 'formul' && <Form />}
       </div>
     </>
   )
