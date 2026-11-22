@@ -17,7 +17,7 @@ function Lessons() {
     }}>Пойск</button>
     {
     need && <div className="body-content">
-      <h1>Пойск урока</h1>
+      <h1 className="home-h1">Пойск урока</h1>
       <Search/>
     </div>
     }
