@@ -8,7 +8,7 @@ function Search() {
         lesson.name.toLowerCase().includes(text.toLowerCase())
     )
 
-    return (
+    return <>
         <div className="search">
             <input
                 type="text"
@@ -30,7 +30,7 @@ function Search() {
                 )}
             </div>
         </div>
-    )
+    </>
 }
 
 export default Search;

@@ -1,11 +1,27 @@
+import { useState } from "react"
 import { getData } from "../data/data"
 import Lesson from "./lesson"
 import Search from "./search"
 
 function Lessons() {
   const data = getData()
+  const [need, setNeed] = useState(false)
 
-  return (
+  return <>
+    <button onClick={() => {
+      if (need) {
+        setNeed(false)
+      } else {
+        setNeed(true)
+      }
+    }}>Пойск</button>
+    {
+    need && <div className="body-content">
+      <h1>Пойск урока</h1>
+      <Search/>
+    </div>
+    }
+    
     <div className="alls">
       <Search/>
       {data.map((l) => (
@@ -18,7 +34,7 @@ function Lessons() {
         </div>
       ))}
     </div>
-  )
+  </>
 }
 
 export default Lessons
