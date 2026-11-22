@@ -14,7 +14,7 @@ function Lessons() {
       } else {
         setNeed(true)
       }
-    }} styleName={
+    }} className={
       need ? "Click-button-home" : "Clicked-button-home"
     }>Пойск</button>
     {
