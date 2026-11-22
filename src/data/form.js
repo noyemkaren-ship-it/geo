@@ -1,5 +1,14 @@
+function shuffle(array) {
+  const result = [...array]; 
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
 export function getForms() {
-    return [
+    return shuffle([
         {
             id: 1,
             title: "Площадь квадрата",
@@ -120,5 +129,5 @@ export function getForms() {
             formula: "a / sin(&alpha;) = b / sin(&beta;) = c / sin(&gamma;)",
             explanation: "Где <b>&alpha;, &beta;, &gamma;</b> — углы, противолежащие сторонам <b>a, b, c</b> соответственно."
         }
-    ]
+    ])
 }

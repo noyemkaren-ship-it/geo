@@ -1,3 +1,5 @@
+import Search from "./search"
+
 function Home() {
   return (
     <div className="Home-Class">
@@ -7,6 +9,8 @@ function Home() {
         ознакомительного и развивающего формата
       </p>
       <img className="home-photo" src="home-photo.jpg" alt="Не удалось загрузить" />
+      <h1 className="home-h1">Найти урок</h1>
+      <Search/>
     </div>
   )
 }
