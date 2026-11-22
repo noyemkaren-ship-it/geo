@@ -48,7 +48,7 @@ function Home() {
             <span className="stat-label">учебных модулей</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">1200+</span>
+            <span className="stat-number">?</span>
             <span className="stat-label">активных пользователей</span>
           </div>
           <div className="stat-item">
