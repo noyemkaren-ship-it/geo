@@ -1,4 +1,3 @@
-/* ===== Сброс и базовая типографика ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,19 +11,16 @@ body {
   line-height: 1.55;
 }
 
-/* ===== Шапка ===== */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-
   padding: 16px 28px;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-
   position: sticky;
   top: 0;
   z-index: 10;
@@ -42,8 +38,9 @@ body {
   gap: 10px;
 }
 
-/* ===== Кнопки навигации ===== */
-.header button {
+/* ===== Кнопки ===== */
+.header button, 
+.lessons-container button {
   font: inherit;
   font-size: 15px;
   padding: 8px 18px;
@@ -55,7 +52,9 @@ body {
 
 .Click-button-home,
 .Click-button-alls,
-.Click-button-f {
+.Click-button-f,
+.search-block .Click-button-home, 
+.search-toggle-wrap .Click-button-home {
   background: #eef2ff;
   color: #1d4ed8;
   border-color: #c7d2fe;
@@ -63,7 +62,8 @@ body {
 
 .Clicked-button-home,
 .Clicked-button-alls,
-.Clicked-button-f {
+.Clicked-button-f,
+.search-toggle-wrap .Clicked-button-home {
   background: #1d4ed8;
   color: #ffffff;
   cursor: default;
@@ -72,7 +72,8 @@ body {
 
 .Click-button-home:hover,
 .Click-button-alls:hover,
-.Click-button-f:hover {
+.Click-button-f:hover,
+.search-toggle-wrap .Click-button-home:hover {
   background: #1d4ed8;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
@@ -84,36 +85,21 @@ body {
   transform: translateY(1px);
 }
 
+/* ===== УВЕЛИЧЕННАЯ КНОПКА ПОИСКА ===== */
+.search-toggle-wrap button {
+  font-size: 17px;        /* Крупный шрифт */
+  padding: 12px 32px;     /* Большие отступы (ширина и высота) */
+  font-weight: 600;       /* Жирный текст */
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.15); /* Легкая тень */
+  letter-spacing: 0.5px;
+}
+
 /* ===== Основной контент ===== */
 .body-content {
   max-width: 960px;
   margin: 0 auto;
   padding: 32px 20px 60px;
-}
-
-/* ===== Главная ===== */
-.Home-Class {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: flex-start;
-}
-
-.home-h1 {
-  font-size: 30px;
-  color: #111827;
-}
-
-.Description {
-  font-size: 17px;
-  color: #4b5563;
-  max-width: 640px;
-}
-
-.home-photo {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 /* ===== Список уроков ===== */
@@ -174,8 +160,6 @@ body {
   padding-top: 12px;
   border-top: 1px dashed #e5e7eb;
 }
-
-/* ===== Урок ===== */
 .lesson-text h1,
 .lesson-text h2,
 .lesson-text h3 {
@@ -195,7 +179,6 @@ body {
   border-radius: 10px;
 }
 
-/* ===== Заголовки урока ===== */
 .lesson-text h1 {
   font-size: 28px;
   line-height: 1.25;
@@ -225,7 +208,6 @@ body {
   box-shadow: 0 2px 10px rgba(29, 78, 216, 0.08);
 }
 
-/* Обновили селектор: теперь .ytv-text вместо устаревшего big */
 .ytv-text {
   display: block;
   font-size: 17px;
@@ -245,7 +227,6 @@ body {
   box-shadow: 0 2px 10px rgba(22, 163, 74, 0.08);
 }
 
-/* Метка «Доказательство» в углу блока */
 .doc::before {
   content: "Доказательство";
   display: block;
@@ -257,7 +238,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Абзацы внутри доказательства */
 .doc p {
   margin: 0 0 12px;
   font-size: 16px;
@@ -269,7 +249,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Финальная строка «Что и требовалось доказать» + символ ∎ */
 .doc-end {
   font-style: italic;
   font-weight: 600;
@@ -283,7 +262,6 @@ body {
   color: #16a34a;
 }
 
-/* Заголовок «Доказательство» (h2) — зелёный, чтобы сочетался с блоком */
 .lesson-text h2.doc-title {
   color: #16a34a;
 }
@@ -320,9 +298,8 @@ body {
   margin-top: 0;
 }
 
-/* Стилизация details (кнопка "узнать") */
 .form-details {
-  margin-top: auto; /* прижимает кнопку к низу карточки */
+  margin-top: auto; 
 }
 
 .detail-sum-f {
@@ -335,11 +312,10 @@ body {
   font-size: 14px;
   font-weight: 600;
   user-select: none;
-  list-style: none; /* убираем стандартный треугольник */
+  list-style: none; 
   transition: background 0.18s ease, color 0.18s ease;
 }
 
-/* Убираем стандартный маркер в WebKit (Safari/Chrome) */
 .detail-sum-f::-webkit-details-marker {
   display: none;
 }
@@ -349,49 +325,29 @@ body {
   color: #ffffff;
 }
 
-/* Когда блок открыт — меняем цвет кнопки */
 .form-details[open] .detail-sum-f {
   background: #1d4ed8;
   color: #ffffff;
   margin-bottom: 12px;
 }
 
-/* Сама формула */
 .f-detail {
   background: #f8fafc;
   border: 1px dashed #cbd5e1;
   border-radius: 8px;
   padding: 16px;
-  font-size: 22px; /* Крупный шрифт для формул */
+  font-size: 22px; 
   text-align: center;
   color: #0f172a;
   margin: 0;
 }
 
-/* Красиво оформляем sup (степени) внутри формулы */
 .f-detail sup {
   font-size: 0.65em;
   vertical-align: super;
   line-height: 0;
 }
 
-/* ===== Адаптив ===== */
-@media (max-width: 600px) {
-  .header {
-    padding: 12px 16px;
-  }
-  .header-h2 {
-    font-size: 18px;
-  }
-  .header button {
-    padding: 7px 14px;
-    font-size: 14px;
-  }
-  .home-h1 {
-    font-size: 24px;
-  }
-}
-/* Текст объяснения под формулой */
 .f-explanation {
   margin-top: 12px;
   font-size: 14px;
@@ -401,7 +357,7 @@ body {
 }
 
 .f-explanation b {
-  color: #1d4ed8; /* Выделяем переменные синим */
+  color: #1d4ed8; 
 }
 
 .f-content {
@@ -461,7 +417,7 @@ body {
 .Home-Class {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Отступы между секциями */
+  gap: 40px; 
   width: 100%;
 }
 
@@ -493,7 +449,7 @@ body {
 
 .home-photo {
   max-width: 100%;
-  width: 600px; /* Ограничиваем максимальную ширину картинки */
+  width: 600px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
@@ -537,7 +493,7 @@ body {
 }
 
 .features-list strong {
-  color: #1d4ed8; /* Выделяем заголовки пунктов синим */
+  color: #1d4ed8;
   display: block;
   margin-bottom: 4px;
   font-size: 17px;
@@ -594,7 +550,7 @@ body {
 
 /* --- 4. Призыв к действию (CTA) --- */
 .cta-section {
-  background: #1d4ed8; /* Синий фон */
+  background: #1d4ed8; 
   color: #ffffff;
   padding: 40px 20px;
   border-radius: 16px;
@@ -647,23 +603,7 @@ body {
   font-size: 14px;
 }
 
-/* --- Адаптив для мобильных --- */
-@media (max-width: 600px) {
-  .hero-section {
-    padding: 20px 15px;
-  }
-  .home-h1 {
-    font-size: 26px;
-  }
-  .stats-grid {
-    grid-template-columns: 1fr; /* В статистике на телефоне ставим друг под другом */
-  }
-  .cta-section h2 {
-    font-size: 22px;
-  }
-}
-
-
+/* ===== Специфичные стили для страницы уроков ===== */
 .lessons-container {
   display: flex;
   flex-direction: column;
@@ -673,7 +613,7 @@ body {
 
 .search-toggle-wrap {
   display: flex;
-  justify-content: flex-end; /* Кнопка справа (можешь поставить flex-start для левого края) */
+  justify-content: flex-start; /* Поставил кнопку слева, так логичнее */
 }
 
 .search-block {
@@ -681,10 +621,39 @@ body {
   border: 1px dashed #cbd5e1;
   padding: 24px;
   border-radius: 12px;
-  animation: fadeIn 0.3s ease; /* Плавное появление */
+  animation: fadeIn 0.3s ease; 
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Адаптив для мобильных ===== */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 16px;
+  }
+  .header-h2 {
+    font-size: 18px;
+  }
+  .header button {
+    padding: 7px 14px;
+    font-size: 14px;
+  }
+  .home-h1 {
+    font-size: 26px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-section h2 {
+    font-size: 22px;
+  }
+  .hero-section {
+    padding: 20px 15px;
+  }
+  .search-toggle-wrap button {
+    width: 100%; 
+  }
 }
