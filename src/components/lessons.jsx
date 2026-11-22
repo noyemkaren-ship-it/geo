@@ -23,7 +23,6 @@ function Lessons() {
     }
     
     <div className="alls">
-      <Search/>
       {data.map((l) => (
         <div className="one-line" key={l.id}>
           <h3 className="title">{l.name}</h3>
