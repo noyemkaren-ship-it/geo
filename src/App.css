@@ -456,3 +456,209 @@ body {
   font-style: italic;
   padding: 20px;
 }
+
+/* ===== Главная страница (Лендинг) ===== */
+.Home-Class {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Отступы между секциями */
+  width: 100%;
+}
+
+/* --- 1. Главный экран (Hero) --- */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+  padding: 40px 20px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.home-h1 {
+  font-size: 32px;
+  color: #1d4ed8;
+  margin: 0;
+}
+
+.Description {
+  font-size: 17px;
+  color: #4b5563;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.home-photo {
+  max-width: 100%;
+  width: 600px; /* Ограничиваем максимальную ширину картинки */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* --- 2. Блок с преимуществами --- */
+.features-section {
+  text-align: left;
+}
+
+.features-section h2 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.features-list li {
+  background: #ffffff;
+  padding: 16px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.features-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.features-list strong {
+  color: #1d4ed8; /* Выделяем заголовки пунктов синим */
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+/* --- 3. Блок статистики --- */
+.stats-section {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.stats-section h2 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d4ed8;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* --- 4. Призыв к действию (CTA) --- */
+.cta-section {
+  background: #1d4ed8; /* Синий фон */
+  color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+}
+
+.cta-section h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.cta-section p {
+  color: #bfdbfe;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: #ffffff;
+  color: #1d4ed8;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cta-button:hover {
+  background: #eef2ff;
+  transform: scale(1.05);
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+/* --- 5. Футер --- */
+.home-footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* --- Адаптив для мобильных --- */
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 20px 15px;
+  }
+  .home-h1 {
+    font-size: 26px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr; /* В статистике на телефоне ставим друг под другом */
+  }
+  .cta-section h2 {
+    font-size: 22px;
+  }
+}

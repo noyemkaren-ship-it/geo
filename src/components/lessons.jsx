@@ -1,5 +1,6 @@
 import { getData } from "../data/data"
 import Lesson from "./lesson"
+import Search from "./search"
 
 function Lessons() {
   const data = getData()
