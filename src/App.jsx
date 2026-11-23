@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Home from './components/home'
 import Lessons from './components/lessons'
 import Form from './components/form'
+import DowPage from './components/dowpage'
 import './App.css'
 
 function App() {
@@ -33,7 +34,6 @@ function App() {
             </button>
           )}
 
-          {/* Здесь была ошибка: onClick={setPage('formul')} */}
           {page !== 'formul' ? (
             <button className="Click-button-f" onClick={() => setPage('formul')}>
               Формулы
@@ -43,6 +43,15 @@ function App() {
               Формулы
             </button>
           )}
+          { page !== 'books' ? (
+            <button className="Click-button-f" onClick={() => setPage('books')}>
+              Книги
+            </button>
+            ) : (
+            <button className="Clicked-button-f" disabled>
+              Книги
+            </button>
+          )}
         </div>
       </div>
 
@@ -50,6 +59,7 @@ function App() {
         {page === 'index' && <Home />}
         {page === 'alls' && <Lessons />}
         {page === 'formul' && <Form />}
+        {page === 'books' && <DowPage/>}
       </div>
     </>
   )

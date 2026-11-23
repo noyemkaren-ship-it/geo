@@ -392,7 +392,23 @@ body {
   gap: 12px;
 }
 
+
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .search-item {
+  background: #ffffff;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+.book {
   background: #ffffff;
   padding: 16px;
   border: 1px solid #e5e7eb;
