@@ -10,7 +10,7 @@ function DowPage() {
                 (b) => <div className="book">
                     <h1>{b.title}</h1>
                     <h2 className="author">{b.author}</h2>
-                    <a download={b.href}>установить</a>
+                    <a href={b.href} download={`Геометрия-7-9_Погорелов.pdf`}>установить</a>
                 </div>
             )
         }
