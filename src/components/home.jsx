@@ -57,8 +57,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* Призыв к действию */}
       <section className="cta-section">
         <h2>Готовы начать?</h2>
         <p>
@@ -70,7 +68,6 @@ function Home() {
         </button>
       </section>
 
-      {/* Небольшой футер с контактами */}
       <footer className="home-footer">
         <p>© 2025 Учебная платформа. Связь: support@example.com</p>
       </footer>
