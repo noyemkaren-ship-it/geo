@@ -3,6 +3,7 @@ import Home from './components/home'
 import Lessons from './components/lessons'
 import Form from './components/form'
 import DowPage from './components/dowpage'
+import Another from './components/another'
 import './App.css'
 
 function App() {
@@ -43,6 +44,17 @@ function App() {
               Формулы
             </button>
           )}
+
+          {page !== 'another' ? (
+            <button className="Click-button-f" onClick={() => setPage('another')}>
+              Другое
+            </button>
+          ) : (
+            <button className="Clicked-button-f" disabled>
+              Другое
+            </button>
+          )}
+
           { page !== 'books' ? (
             <button className="Click-button-f" onClick={() => setPage('books')}>
               Книги
@@ -60,6 +72,7 @@ function App() {
         {page === 'alls' && <Lessons />}
         {page === 'formul' && <Form />}
         {page === 'books' && <DowPage/>}
+        {page === 'another' && <Another/>}
       </div>
     </>
   )
