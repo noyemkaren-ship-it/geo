@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className="header">
-        <h2 className="header-h2">Геометрия с Efirium</h2>
+        <h2 className="header-h2" onClick={() => setPage('index')}>Геометрия с Efirium</h2>
 
         <div className="header-buttons">
           {page !== 'index' ? (
