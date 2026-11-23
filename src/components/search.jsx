@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getData } from "../data/data"
+import Lesson from "./lesson";
 
 function Search() {
     const [text, setText] = useState('')
@@ -23,6 +24,10 @@ function Search() {
                     filteredData.map((lesson) => (
                         <div key={lesson.id} className="search-item">
                             <h3>{lesson.name}</h3>
+                            <details>
+                                <summary>Подробнее</summary>
+                                <Lesson info={lesson}/>
+                            </details>
                         </div>
                     ))
                 ) : (
